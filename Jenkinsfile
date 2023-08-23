@@ -68,24 +68,36 @@ pipeline {
             }
         }
         stage('Artifact Upload'){
-            steps{
-                nexusArtifactUploader(
-                    nexusVersion: 'nexus3',
-                    protocol: 'http',
-                    nexusUrl: "$(NEXUSIP):$(NEXUSPORT)",
-                    groupId: 'QA',
-                    version: "$(env.BUILD_ID).$(env.BUILD_TIMESTAMP)",
-                    repository: "$(RELEASE_REPO)",
-                    credentialsId: "$(NEXUS_LOGIN)",
-                    artifacts: [
-                        [artifactId: 'viproapp',
-                        classifier: '',
-                        file: 'target/vprofile-v2.var',
-                        type: 'jar']
-                    ]
-                )
-            }
+            steps {
+                script {
+                    def nexusUrl = "${NEXUSIP}:${NEXUSPORT}"
+                    def groupId = 'QA'
+                    def version = "${env.BUILD_ID}.${env.BUILD_TIMESTAMP}"
+                    def repository = "${RELEASE_REPO}"
+                    def credentialsId = "${NEXUS_LOGIN}"
+                    def artifactId = 'viproapp'
+                    def file = 'target/vprofile-v2.var'
+                    def type = 'jar'
+
+                    nexusArtifactUploader(
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        nexusUrl: nexusUrl,
+                        groupId: groupId,
+                        version: version,
+                        repository: repository,
+                        credentialsId: credentialsId,
+                        artifacts: [
+                            [artifactId: artifactId,
+                            classifier: '',
+                            file: file,
+                            type: type]
+                        ]
+                   )
+                }
         }
+    }
+
     }
 
 }
