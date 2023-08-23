@@ -76,7 +76,7 @@ pipeline {
                     def repository = "${RELEASE_REPO}"
                     def credentialsId = "${NEXUS_LOGIN}"
                     def artifactId = 'viproapp'
-                    def file = 'target/vprofile-v2.var'
+                    def file = 'target/vprofile-v2.war'
                     def type = 'jar'
 
                     nexusArtifactUploader(
