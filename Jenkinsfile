@@ -33,15 +33,15 @@ pipeline {
             }
             
         }
-        stage('UNIT TEST'){
+        stage('Test'){
             steps {
-                sh 'mvn test'
+                sh 'mvn -s settings.xml test'
             }
         }
 
-	    stage('INTEGRATION TEST'){
+	    stage('Checkstyle Analysis'){
             steps {
-                sh 'mvn verify -DskipUnitTests'
+                sh 'mvn -s settings.xml checkstyle:checkstyle'
             }
         }
 	
