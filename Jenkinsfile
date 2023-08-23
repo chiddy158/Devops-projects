@@ -17,7 +17,7 @@ pipeline {
         NEXUSIP = "172.31.62.254"
        	NEXUS_GRP_REPO = "vprofile-maven-group"
         NEXUS_LOGIN = "nexuslogin"
-        SONARSERVER =  "sonarserver"
+        SONARSERVER =  "Sonarserver"
         SONARSCANNER = "Sonarscanner"
         }
 	
@@ -49,12 +49,12 @@ pipeline {
 
         stage('Sonarqube Analysis') {          
 		  environment {
-             scannerHome = "$(SONARSCANNER)"
+             scannerHome = tool '$SONARSCANNER'
           }
 
           steps {
-            withSonarQubeEnv("$(SONARSERVER)") {
-               sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile \
+            withSonarQubeEnv('$SONARSERVER'){
+               sh '''$scannerHome/bin/sonar-scanner -Dsonar.projectKey=vprofile \
                    -Dsonar.projectName=vprofile-repo \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
