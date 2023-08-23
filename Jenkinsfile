@@ -17,8 +17,8 @@ pipeline {
         NEXUSIP = "172.31.62.254"
        	NEXUS_GRP_REPO = "vprofile-maven-group"
         NEXUS_LOGIN = "nexuslogin"
-        SONARSERVER =  "Sonarserver"
-        SONARSCANNER = "Sonarscanner"
+        SONARSERVER =  "sonarserver"
+        SONARSCANNER = "sonarscanner"
         }
 	
     stages{
