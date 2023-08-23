@@ -74,7 +74,7 @@ pipeline {
                 
             }
         }
-        stage('Artifact Upload'){
+        stage('Artifact Upload') {
             steps {
                 script {
                     def nexusUrl = "${NEXUSIP}:${NEXUSPORT}"
@@ -83,8 +83,8 @@ pipeline {
                     def repository = "${RELEASE_REPO}"
                     def credentialsId = "${NEXUS_LOGIN}"
                     def artifactId = 'viproapp'
-                    def file = 'target/vprofile-v2.war'
-                    def type = 'jar'
+                    def file = 'target/vprofile-v2.war' // Update this for the correct file type
+                    def type = 'war' // Update this for the correct file type
 
                     nexusArtifactUploader(
                         nexusVersion: 'nexus3',
@@ -102,6 +102,7 @@ pipeline {
                         ]
                    )
                 }
+            }
         }
     }
 
