@@ -44,13 +44,14 @@
                                 <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
                                     class="icon-bar"></span><span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="${contextPath}/index">VISUAL PATH</a>
+                            <a class="navbar-brand" href="${contextPath}/index">VITALSIGNA</a>
                             <i class="brand_network"><small><small>VProfile</small></small></i>
                         </div>
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="#">TECHNOLOGIES</a></li>
                                 <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">CONTACT US/a></li>
                                 <li><a href="#">BLOG</a></li>
                             </ul>
                             <div class="navbar-collapse navbar-right collapse">
