@@ -117,7 +117,7 @@ pipeline {
 			    disableHostKeyChecking: true,
                 extraVars   : [
                    	USER: "admin",
-                    PASS: "${NEXUSPASS}",
+                    PASS: '${NEXUSPASS}',
 			        nexusip: "172.31.59.206",
 			        reponame: "vprofile-release",
 			        groupid: "QA",
