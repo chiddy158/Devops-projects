@@ -83,7 +83,7 @@ pipeline {
                     def repository = "${RELEASE_REPO}"
                     def credentialsId = "${NEXUS_LOGIN}"
                     def artifactId = 'viproapp'
-                    def file = 'target/vprofile-v2.war' // Update this for the correct file type
+                    def file = 'target/vprofile-v2.war' // Update this for the correct file type to use
                     def type = 'war' // Update this for the correct file type
 
                     nexusArtifactUploader(
