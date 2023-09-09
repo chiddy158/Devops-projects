@@ -82,7 +82,7 @@ pipeline {
                     def version = "${env.BUILD_ID}.${env.BUILD_TIMESTAMP}"
                     def repository = "${RELEASE_REPO}"
                     def credentialsId = "${NEXUS_LOGIN}"
-                    def artifactId = 'viproapp'
+                    def artifactId = 'vproapp'
                     def file = 'target/vprofile-v2.war' // Update this for the correct file type
                     def type = 'war' // Update this for the correct file type
 
